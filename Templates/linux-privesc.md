@@ -1,0 +1,112 @@
+
+## Privilege Escalation
+---------------------------------------------
+### Final solution
+
+**Step 1** Review PrivEsc Mind map
+https://raw.githubusercontent.com/hxhBrofessor/PrivEsc-MindMap/main/Linux-Privesc.JPG
+
+
+### Information Gathering (Config files)
+
+Check for files with SUID bit set and then check gtfobins
+
+
+# Sticky bit
+`find / -perm -1000 -type d 2>/dev/null`   
+
+```
+/dev/mqueue
+/dev/shm
+/var/spool/cron/crontabs
+/var/tmp
+/var/lib/php/sessions
+/sys/fs/bpf
+/tmp
+/run/lock
+``` 
+
+# SUID bit 
+`find / -perm -u=s -type f 2>/dev/null` 
+
+```
+/usr/bin/su
+/usr/bin/sudo
+/usr/bin/fusermount
+/usr/bin/chfn
+/usr/bin/passwd
+/usr/bin/chsh
+/usr/bin/umount
+/usr/bin/newgrp
+/usr/bin/mount
+/usr/bin/gpasswd
+/usr/lib/eject/dmcrypt-get-device
+/usr/lib/dbus-1.0/dbus-daemon-launch-helper
+/usr/lib/openssh/ssh-keysign
+``` 
+
+# SGID Bit 
+`find / -perm -g=s -type f 2>/dev/null` 
+
+```
+/usr/sbin/unix_chkpwd
+/usr/bin/wall
+/usr/bin/chage
+/usr/bin/status
+/usr/bin/bsd-write
+/usr/bin/ssh-agent
+/usr/bin/expiry
+/usr/bin/dotlockfile
+/usr/bin/crontab
+``` 
+
+### Information Gathering (OS and Kernel)
+
+`cat /etc/issue`
+
+`cat /etc/*-release`
+
+# Debian based
+`cat /etc/lsb-release`
+
+`cat /etc/redhat-release`   # Redhat based
+
+`cat /proc/version`
+
+`uname -a`
+
+`uname -mrs`
+
+`rpm -q kernel`
+
+`dmesg | grep Linux`
+
+`ls /boot | grep vmlinuz-`
+
+### Information Gathering (Running Processes)
+
+`ps aux | grep root`
+
+`ps -ef | grep root`
+
+`cat /etc/services `
+
+### Information Gathering (Installed Packages and Programs)
+
+`ls -alh /usr/bin/`
+
+`ls -alh /sbin/`
+
+`dpkg -l`
+
+`rpm -qa`
+
+`ls -alh /var/cache/apt/archivesO`
+
+`ls -alh /var/cache/yum/`
+
+## Tools to run
+(linpeas)[https://github.com/carlospolop/PEASS-ng/tree/master/linPEAS]
+(linux-smart-enumeration)[https://github.com/diego-treitos/linux-smart-enumeration] 
+(process snooper)[https://github.com/DominicBreuker/pspy] 
+(linux exploit suggester)[https://github.com/jondonas/linux-exploit-suggester-2]
