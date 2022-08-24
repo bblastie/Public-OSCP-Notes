@@ -1,27 +1,36 @@
 # Summary
 - IP: 
-- Web Application:
-- Web Technologies: 
-- Web Server: 
-- SSH Service: 
-- Database: 
 - OS: 
 
+===============================
+|   AVOID  *RABBIT*  HOLES!   |
+===============================
+|       Stuck 2+ Hours        |
+|           ------            |
+|     Fifteen Minute Break    |
+|    And Change Vulnerabily   |
+===============================
 
-## Top Options
-- Mantis Bug tracker exploit 
-- Adminer weak admin creds
-- Adminer vulnerability
-- Wordpress vulnerability
-- Duplication of app on 8082? 
+## POINTERS
+- File:
+- Type: 
+- Notes: 
 
+### VULNERABILITIES DISCOVERED
+- CVE: 
+- Type: 
+- PoC: 
 
-## Reconnaissance
+### REVERSE SHELL
+Bash -
+nodeJS -
+PHP -
+Python - 
+Powershell -
+Msfvenom - 
+
+## Port Scanning 
 -----------------------------
-
-### Port Scanning 
------------------------------
-
 TCP connect san across all ports
 
 `nmap -p- -Pn -sT --reason --open <ip>` 
@@ -30,17 +39,14 @@ TCP connect san across all ports
 
 > Then you can run nmap automator! 
 
-### Manual Port Probing
------------------------------
-`nc -nv <ip> <port>` 
-
-`telnet <ip> <port>`
-
-### Services 
------------------------------
-
-### Web Port 80
------------------------------
+## Web Enumeration 
+----------------------------- 
+- Web Application:
+- Web Technologies: 
+- Database: 
+- Language:
+- Framework:
+- What does the application do?: 
 
 `nikto -h "http://$IP" | tee nikto.log` 
 
@@ -57,9 +63,6 @@ Get Domain
 
 Get domain users 
 `ldap -h 10.10.10.161 -x -b "DC=htb,DC=local" '(objectClass=Person)'` 
-
-### SearchSploit Results
------------------------------
 
 ## Exploitation 
 -------------------------

