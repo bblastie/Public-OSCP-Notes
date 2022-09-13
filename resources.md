@@ -50,7 +50,17 @@ TJNull's OSCP Notes - https://www.netsecfocus.com/oscp/2021/05/06/The_Journey_to
 
 [LFI to shell PHP](https://www.youtube.com/watch?v=ttTVNcPnsJY)
 
+[LFI and RFI](https://notchxor.github.io/oscp-notes/2-web/LFI-RFI/)
+
+[Payloadallthethings LFI](https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/File%20Inclusion#basic-rfi)
+
+[Writable /etc/passwd file - privesc](https://infinitelogins.com/2021/02/24/linux-privilege-escalation-weak-file-permissions-writable-etc-passwd/)
+
+[GTFOBins for privesc Sudo, suid, etc](https://gtfobins.github.io/)
+
 [Wordpress Error logs  for LFI](https://linuxhint.com/view-wordpress-error-logs/)
+
+[Remote File Inclusion](https://sushant747.gitbooks.io/total-oscp-guide/content/remote_file_inclusion.html)
 
 [LFI Wordlist](https://github.com/Karmaz95/crimson/blob/master/words/exp/LFI)
 
