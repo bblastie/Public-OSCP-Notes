@@ -33,7 +33,7 @@ Msfvenom -
 -----------------------------
 TCP connect san across all ports
 
-`nmap -p- -Pn -sT --reason --open <ip>` 
+`nmap -p- -Pn -sT --reason --open -oA full_port_scan <ip>` 
 
 `nmap -p <ports> -Pn -sC -sV -oA nmap_default_scripts <ip>`
 
@@ -50,7 +50,7 @@ TCP connect san across all ports
 
 `nikto -h "http://$IP" | tee nikto.log` 
 
-`gobuster dir -u http://$IP -w /usr/share/wordlists/dirb/small.txt -b 400,401,404,500 -x php,sh,txt,cgi,html,js,css`
+`gobuster dir -u http://$IP -w /usr/share/wordlists/dirb/big.txt -b 400,401,404,500 -x php,sh,txt,cgi,html,js,css | tee gobuster.txt`
 
 `sudo nmap -p 80 -sC 192.168.120.108` 
 

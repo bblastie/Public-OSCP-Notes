@@ -26,6 +26,8 @@ TJNull's OSCP Notes - https://www.netsecfocus.com/oscp/2021/05/06/The_Journey_to
 
 [PowerView cheatsheet](https://zflemingg1.gitbook.io/undergrad-tutorials/powerview/powerview-cheatsheet)
 
+[/etc/shadow and passwd file formats](https://www.cyberciti.biz/faq/understanding-etcshadow-file/#:~:text=The%20%2Fetc%2Fshadow%20is%20a,only%20to%20the%20root%20user.)
+
 [AD Lateral Movement](https://www.hackingarticles.in/lateral-movement-pass-the-hash-attack/)
 
 [SQL Injection Cheatsheet](https://portswigger.net/web-security/sql-injection/cheat-sheet)
@@ -59,6 +61,10 @@ TJNull's OSCP Notes - https://www.netsecfocus.com/oscp/2021/05/06/The_Journey_to
 [GTFOBins for privesc Sudo, suid, etc](https://gtfobins.github.io/)
 
 [Wordpress Error logs  for LFI](https://linuxhint.com/view-wordpress-error-logs/)
+
+[Wordpress xmlrpc brute force users](https://testpurposes.net/2016/11/01/wordpress-xmlrpc-brute-force-attacks-via-burpsuite/)
+
+[WPScan detailed list of example commands](https://vk9-sec.com/how-to-use-wpscan/)
 
 [Remote File Inclusion](https://sushant747.gitbooks.io/total-oscp-guide/content/remote_file_inclusion.html)
 
