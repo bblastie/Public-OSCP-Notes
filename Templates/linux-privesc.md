@@ -8,6 +8,8 @@ https://raw.githubusercontent.com/hxhBrofessor/PrivEsc-MindMap/main/Linux-Prives
 
 **Step 2** Look around the file system!!! 
 
+**Step 3** Run (linpeas)[https://github.com/carlospolop/PEASS-ng/tree/master/linPEAS]
+
 ### Information Gathering (Config files)
 
 Check for files with SUID bit set and then check gtfobins
@@ -75,24 +77,16 @@ Check for files with SUID bit set and then check gtfobins
 
 `cat /etc/*-release`
 
-# Debian based
 `cat /etc/lsb-release`
-
-`cat /etc/redhat-release`   # Redhat based
 
 `cat /proc/version`
 
-`uname -a`
-
 `uname -mrs`
 
-`rpm -q kernel`
-
-`dmesg | grep Linux`
-
-`ls /boot | grep vmlinuz-`
-
 ### Information Gathering (Running Processes)
+
+### grep for a string in a dir of files
+`grep -ls 'pass' ${PWD}/* `
 
 `ps aux | grep root`
 
@@ -115,7 +109,7 @@ Check for files with SUID bit set and then check gtfobins
 `ls -alh /var/cache/yum/`
 
 ## Tools to run
-(linpeas)[https://github.com/carlospolop/PEASS-ng/tree/master/linPEAS]
+
 (linux-smart-enumeration)[https://github.com/diego-treitos/linux-smart-enumeration] 
 (process snooper)[https://github.com/DominicBreuker/pspy] 
 (linux exploit suggester)[https://github.com/jondonas/linux-exploit-suggester-2]

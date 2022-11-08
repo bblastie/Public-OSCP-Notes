@@ -5,8 +5,27 @@ https://github.com/hxhBrofessor/PrivEsc-MindMap/blob/main/windows-mindMap.JPG
 
 **Step 2** Look around the file system!!! 
 
+**Step 3** 
+
+Determine architecure
+`systeminfo` 
+or 
+`$Env:PROCESSOR_ARCHITECTURE` 
+
+*AMD64 for 64-bit and x86 for 32-bit*
+
+**Step 4**
+Run (winPEAS)[https://github.com/carlospolop/PEASS-ng/tree/master/winPEAS]
+
+**Step 5**
+Run (adPEAS)[https://github.com/61106960/adPEAS]
+
+**Step 6**
+Begin manual review if still no leads 
+
 ## Active Directory Methodology 
-https://cr0mll.github.io/cyberclopaedia/Post%20Exploitation/Active%20Directory%20(AD)/index.html
+https://s0cm0nkey.gitbook.io/s0cm0nkeys-security-reference-guide/red-offensive/testing-methodology/active-directory
+https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Active%20Directory%20Attack.md
 
 ## Basics 
 
@@ -52,13 +71,31 @@ https://cr0mll.github.io/cyberclopaedia/Post%20Exploitation/Active%20Directory%2
 
 `reg query HKCU\SOFTWARE\Policies\Microsoft\Windows\Installer\AlwaysInstallElevated` 
 
+## AD Commands to run
+
+`ldapsearch -H ldap://<ip>:<port> -x -LLL -s sub -b "DC=<domain>,DC=local"` 
+
+### Users
+`net user`
+`net user hacker password /add /domain` 
+
+### Groups 
+`net group "group name"`
+
+`net group "Exchange Windows Permissions" /add account_name` 
+
+## Passwords
+### powershell recursive grep like search
+`ls -R -Hidden -EA SilentlyContinue | select-string <search string>`
+
+### Get password hashes from mimi. 
+`lsadump:​:lsa /patch`
+
 ## Metasploit module for exploit suggestions
 `post/multi/recon/local_exploit_suggester` 
 
 ## Tools to run
 (Watson for kernel exploit suggestions)[https://github.com/rasta-mouse/Watson, https://0xdf.gitlab.io/2019/03/05/htb-devel.html]
-(winPEAS)[https://github.com/carlospolop/PEASS-ng/tree/master/winPEAS]
-(adPEAS)[https://github.com/61106960/adPEAS]
 (Bloodhound)[https://www.ired.team/offensive-security-experiments/active-directory-kerberos-abuse/abusing-active-directory-with-bloodhound-on-kali-linux]
 (Powerview)[https://casvancooten.com/posts/2020/11/windows-active-directory-exploitation-cheat-sheet-and-command-reference/#ad-enumeration-with-powerview]
 (Windows exploit suggester)[https://github.com/AonCyberLabs/Windows-Exploit-Suggester]

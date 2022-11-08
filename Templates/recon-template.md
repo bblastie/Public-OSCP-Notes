@@ -34,10 +34,10 @@ Msfvenom -
 nmap scans to start 
 
 ### Scan all TCP ports 
-`nmap -p- -Pn -sT --reason --open --min-rate 10000 -oA tcp_full_port_scan <ip>` 
+`nmap -p- -Pn -sT --reason --open -oA tcp_full_port_scan <ip>` 
 
 ### Scan all UDP ports 
-`sudo nmap -sU -p- --min-rate 10000 -oA udp_full_port_scan <ip>` 
+`sudo nmap -sU -p- -oA udp_full_port_scan <ip>` 
 
 ### Version and default scripts on found ports
 `nmap -p <ports> -Pn -sC -sV -oA nmap_default_scripts <ip>`
@@ -59,6 +59,8 @@ nmap scans to start
 
 *Remember to change http parameters when testing! (GET/POST/PUT, etc)* 
 
+*Check for robots.txt, changelog, readme, etc.* 
+
 If wordpress site: 
 `wpscan -e ap,at,tt --plugins-detection aggressive --plugins-version-detection aggressive --api-token $WP_SCAN_TOKEN --url http://10.10.110.100:65000/wordpress`
 
@@ -73,10 +75,19 @@ If wordpress site:
 (Enumeration)[https://www.hackingarticles.in/a-little-guide-to-smb-enumeration/] 
 (Crackmapexec)[https://wiki.porchetta.industries/smb-protocol/enumeration]
 
+**If AD DC** 
+`./kerbrute_linux_amd64 userenum -d EGOTISTICAL-BANK.LOCAL /usr/share/seclists/Usernames/xato-net-10-million-usernames.txt --dc 10.10.10.175` 
+**Once you have a user list**
+`GetNPUsers.py egotistical-bank.local/ -usersfile <file> -format hashcat -outputfile hashes.domain.txt` 
+
 `nmap --script smb-vuln* -p 445 -oA smb_vulns <ip>`
 
 ### DNS Enumeration
 (DNS Enum)[https://github.com/muckitymuck/OSCP-Study-Guide/blob/master/enumeration/active_information_gathering.md#dns-enumeration]
+
+`dnsenum --dnsserver 10.10.10.175 egotistical-bank.local`
+
+`dnsrecon -d egotistical-bank.local -a -n 10.10.10.175`
 
 ## Exploitation 
 -------------------------

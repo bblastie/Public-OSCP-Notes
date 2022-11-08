@@ -125,6 +125,8 @@ TJNull's OSCP Notes - https://www.netsecfocus.com/oscp/2021/05/06/The_Journey_to
 
 [Attacking AD](https://zer1t0.gitlab.io/posts/attacking_ad/)
 
+[AD Post-Foothold cheatsheet](https://medium.com/@kuwaitison/active-directory-lateral-movement-and-post-exploitation-cheat-sheet-3170982a7055#9c4b)
+
 [Nishang PowerShell pentesting framework (Payloads, shells, etc)](https://github.com/samratashok/nishang)
 
 [Invoke-Powershelltcp.ps1](https://raw.githubusercontent.com/samratashok/nishang/master/Shells/Invoke-PowerShellTcp.ps1)
