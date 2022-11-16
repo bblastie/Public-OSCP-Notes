@@ -68,6 +68,8 @@ If wordpress site:
 
 `gobuster dir -u http://$IP -f -w /usr/share/wordlists/dirb/big.txt -b 400,401,404,500 -x php,sh,txt,cgi,html,js,css | tee gobuster.txt`
 
+`dirbuster -u https://10.10.10.60 -t 20 -l /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt  -e php,txt,html` 
+
 `sudo nmap -Pn -p 80 -sC 192.168.120.108` 
 
 ### SMB 

