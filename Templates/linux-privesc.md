@@ -3,14 +3,17 @@
 ---------------------------------------------
 
 **Step 1**
+
 Review PrivEsc Mind map
 
 https://raw.githubusercontent.com/hxhBrofessor/PrivEsc-MindMap/main/Linux-Privesc.JPG
 
 **Step 2** 
+
 Look around the file system!!! 
 
 **Step 3**
+
 Run (linpeas)[https://github.com/carlospolop/PEASS-ng/tree/master/linPEAS]
 
 ### Information Gathering 

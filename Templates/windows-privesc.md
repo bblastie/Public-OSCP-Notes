@@ -1,11 +1,13 @@
 # Windows PrivEsc 
 
 **Step 1** 
+
 Review PrivEsc Mind map
 
 https://github.com/hxhBrofessor/PrivEsc-MindMap/blob/main/windows-mindMap.JPG 
 
 **Step 2** 
+
 Look around the file system!!! 
 
 **Step 3** 
