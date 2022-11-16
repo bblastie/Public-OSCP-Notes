@@ -20,10 +20,10 @@ or
 *AMD64 for 64-bit and x86 for 32-bit*
 
 **Step 4**
-Run (winPEAS)[https://github.com/carlospolop/PEASS-ng/tree/master/winPEAS]
+Run [winPEAS](https://github.com/carlospolop/PEASS-ng/tree/master/winPEAS)
 
 **Step 5**
-Run (adPEAS)[https://github.com/61106960/adPEAS]
+Run [adPEAS](https://github.com/61106960/adPEAS)
 
 **Step 6**
 Begin manual review if still no leads 
@@ -35,8 +35,9 @@ https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20an
 
 ## Basics 
 
-(Manual Enum Guide)[https://fuzzysecurity.com/tutorials/16.html]
-(Password Attacks)[https://medium.com/@kuwaitison/local-password-attack-and-credentials-theft-for-windows-linux-5764a1a25363]
+[Manual Enum Guide](https://fuzzysecurity.com/tutorials/16.html)
+
+[Password Attacks](https://medium.com/@kuwaitison/local-password-attack-and-credentials-theft-for-windows-linux-5764a1a25363)
 
 `systeminfo | findstr /B /C:"OS Name" /C:"OS Version"`
 

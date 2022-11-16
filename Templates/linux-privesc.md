@@ -14,10 +14,10 @@ Look around the file system!!!
 
 **Step 3**
 
-Run (linpeas)[https://github.com/carlospolop/PEASS-ng/tree/master/linPEAS]
+Run [linpeas](https://github.com/carlospolop/PEASS-ng/tree/master/linPEAS)
 
 ### Information Gathering 
-(Password Attacks)[https://medium.com/@kuwaitison/local-password-attack-and-credentials-theft-for-windows-linux-5764a1a25363]
+[Password Attacks](https://medium.com/@kuwaitison/local-password-attack-and-credentials-theft-for-windows-linux-5764a1a25363)
 
 ### Sudo list
 `sudo -l`
