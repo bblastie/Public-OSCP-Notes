@@ -64,18 +64,28 @@ nmap scans to start
 If wordpress site: 
 `wpscan -e ap,at,tt --plugins-detection aggressive --plugins-version-detection aggressive --api-token $WP_SCAN_TOKEN --url http://10.10.110.100:65000/wordpress`
 
+Scan website for common issues:
 `nikto -h "http://$IP" | tee nikto.log` 
 
+Subdirectory brute force:
 `gobuster dir -u http://$IP -f -w /usr/share/wordlists/dirb/big.txt -b 400,401,404,500 -x php,sh,txt,cgi,html,js,css | tee gobuster.txt`
+`dirbuster -u http://10.10.10.60 -t 20 -l /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt  -e php,txt,html` 
 
-`dirbuster -u https://10.10.10.60 -t 20 -l /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt  -e php,txt,html` 
-
+nmap default scripts for http:
 `sudo nmap -Pn -p 80 -sC 192.168.120.108` 
 
-### SMB 
+If webdav:
+`davtest -url http://10.10.10.15` 
+
+## SMB 
 -----------------------------
-(Enumeration)[https://www.hackingarticles.in/a-little-guide-to-smb-enumeration/] 
-(Crackmapexec)[https://wiki.porchetta.industries/smb-protocol/enumeration]
+[Enumeration](https://www.hackingarticles.in/a-little-guide-to-smb-enumeration/)
+[Crackmapexec](https://wiki.porchetta.industries/smb-protocol/enumeration)
+
+`crackmapexec smb 10.10.10.161 -u '' -p ''`
+`crackmapexec smb 10.10.10.161 --pass-pol`
+`crackmapexec smb 10.10.10.161 --users`
+`crackmapexec smb 10.10.10.161 --groups`
 
 **If AD DC** 
 `./kerbrute_linux_amd64 userenum -d EGOTISTICAL-BANK.LOCAL /usr/share/seclists/Usernames/xato-net-10-million-usernames.txt --dc 10.10.10.175` 
@@ -84,9 +94,30 @@ If wordpress site:
 
 `nmap --script smb-vuln* -p 445 -oA smb_vulns <ip>`
 
-### DNS Enumeration
-(DNS Enum)[https://github.com/muckitymuck/OSCP-Study-Guide/blob/master/enumeration/active_information_gathering.md#dns-enumeration]
+## DNS Enumeration
+Don't forget to add hosts to /etc/hosts! 
 
+[DNS Enum](https://github.com/muckitymuck/OSCP-Study-Guide/blob/master/enumeration/active_information_gathering.md#dns-enumeration)
+
+Zone Transfer:
+`dig axfr cronos.htb @10.10.10.13` 
+
+Subdomain brute force:
+`gobuster dns -d cronos.htb -w /usr/share/wordlists/seclists/Discovery/DNS/bitquark-subdomains-top100000.txt`
+
+`wfuzz -c -u http://10.10.10.43/ -H "Host: FUZZ.nineveh.htb" -w /usr/share/seclists/Discovery/DNS/bitquark-subdomains-top100000.txt --hh 178` ** --hh is hide responses of a certain size
+
+use nslookup for machines with port 53 open:
+```
+root@kali# nslookup 
+> server 10.10.10.13
+Default server: 10.10.10.13
+Address: 10.10.10.13#53
+> 10.10.10.13
+13.10.10.10.in-addr.arpa        name = ns1.cronos.htb.
+``` 
+
+Automated dns recon:
 `dnsenum --dnsserver 10.10.10.175 egotistical-bank.local`
 
 `dnsrecon -d egotistical-bank.local -a -n 10.10.10.175`

@@ -4,9 +4,7 @@
 
 **Step 1**
 
-Review PrivEsc Mind map
-
-https://raw.githubusercontent.com/hxhBrofessor/PrivEsc-MindMap/main/Linux-Privesc.JPG
+[Review PrivEsc Mind map](https://raw.githubusercontent.com/hxhBrofessor/PrivEsc-MindMap/main/Linux-Privesc.JPG)
 
 **Step 2** 
 

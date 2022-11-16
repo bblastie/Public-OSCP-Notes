@@ -61,6 +61,10 @@ TJNull's OSCP Notes - https://www.netsecfocus.com/oscp/2021/05/06/The_Journey_to
 
 [MySQL UDF Walkthrough](https://redteamnation.com/mysql-user-defined-functions/)
 
+[LFI to RCE with phpinfo](https://insomniasec.com/downloads/publications/LFI%20With%20PHPInfo%20Assistance.pdf)
+
+[phpinfo LFI to RCE walkthrough](https://0xdf.gitlab.io/2020/04/22/htb-nineveh.html)
+
 [LFI to RCE Cheatsheet](https://blog.certcube.com/detailed-cheatsheet-lfi-rce-websheels/)
 
 [LFI to RCE exploit-db](https://www.exploit-db.com/papers/12992)
