@@ -1,14 +1,17 @@
 
 ## Privilege Escalation
 ---------------------------------------------
-### Final solution
 
-**Step 1** Review PrivEsc Mind map
+**Step 1**
+Review PrivEsc Mind map
+
 https://raw.githubusercontent.com/hxhBrofessor/PrivEsc-MindMap/main/Linux-Privesc.JPG
 
-**Step 2** Look around the file system!!! 
+**Step 2** 
+Look around the file system!!! 
 
-**Step 3** Run (linpeas)[https://github.com/carlospolop/PEASS-ng/tree/master/linPEAS]
+**Step 3**
+Run (linpeas)[https://github.com/carlospolop/PEASS-ng/tree/master/linPEAS]
 
 ### Information Gathering 
 (Password Attacks)[https://medium.com/@kuwaitison/local-password-attack-and-credentials-theft-for-windows-linux-5764a1a25363]

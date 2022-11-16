@@ -1,9 +1,12 @@
 # Windows PrivEsc 
 
-**Step 1** Review PrivEsc Mind map
+**Step 1** 
+Review PrivEsc Mind map
+
 https://github.com/hxhBrofessor/PrivEsc-MindMap/blob/main/windows-mindMap.JPG 
 
-**Step 2** Look around the file system!!! 
+**Step 2** 
+Look around the file system!!! 
 
 **Step 3** 
 
@@ -25,11 +28,13 @@ Begin manual review if still no leads
 
 ## Active Directory Methodology 
 https://s0cm0nkey.gitbook.io/s0cm0nkeys-security-reference-guide/red-offensive/testing-methodology/active-directory
+
 https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Active%20Directory%20Attack.md
 
 ## Basics 
 
 (Manual Enum Guide)[https://fuzzysecurity.com/tutorials/16.html]
+(Password Attacks)[https://medium.com/@kuwaitison/local-password-attack-and-credentials-theft-for-windows-linux-5764a1a25363]
 
 `systeminfo | findstr /B /C:"OS Name" /C:"OS Version"`
 
