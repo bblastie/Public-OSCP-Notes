@@ -22,6 +22,12 @@ TJNull's OSCP Notes - https://www.netsecfocus.com/oscp/2021/05/06/The_Journey_to
 
 [Domain Escalation Resource Based Constrained Delegation](https://www.hackingarticles.in/domain-escalation-resource-based-constrained-delegation/)
 
+[living off the land binaries lolbas](https://lolbas-project.github.io/)
+
+[Windows and AD cheatsheet by command WADComs](https://wadcoms.github.io/)
+
+[GTFOBins for unix binaries for privesc and other bypasses](https://gtfobins.github.io/)
+
 [Active Directory Post Exploitation Methodology](https://cr0mll.github.io/cyberclopaedia/Post%20Exploitation/Active%20Directory%20(AD)/index.html)
 
 [Active Directory Kerberos Delegation Walkthroughs](https://www.guidepointsecurity.com/blog/delegating-like-a-boss-abusing-kerberos-delegation-in-active-directory/)

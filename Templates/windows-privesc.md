@@ -43,6 +43,8 @@ https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20an
 
 `whoami /all` 
 
+`whoami /groups` 
+
 `whoami /priv` 
 
 `net users` 
