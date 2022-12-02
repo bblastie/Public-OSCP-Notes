@@ -1,6 +1,5 @@
-# Summary
-- IP: 
-- OS: 
+
+
 
 ===============================
 |   AVOID  *RABBIT*  HOLES!   |
@@ -11,28 +10,20 @@
 |    And Change Vulnerabily   |
 ===============================
 
-## POINTERS
-- File:
-- Type: 
-- Notes: 
+# Summary
+- IP: 
+- OS: 
 
-### VULNERABILITIES DISCOVERED
-- CVE: 
-- Type: 
-- PoC: 
+## Possible routes
+- 
 
-### REVERSE SHELL
-Bash -
-nodeJS -
-PHP -
-Python - 
-Powershell -
-Msfvenom - 
+## Exploitation 
+-------------------------
+Enter info about exploitation here
+
 
 ## Port Scanning 
 -----------------------------
-nmap scans to start 
-
 ### Scan all TCP ports 
 `nmap -p- -Pn -sT --reason --open -oA tcp_full_port_scan <ip>` 
 
@@ -122,6 +113,3 @@ Automated dns recon:
 
 `dnsrecon -d egotistical-bank.local -a -n 10.10.10.175`
 
-## Exploitation 
--------------------------
-Enter info about exploitation here
