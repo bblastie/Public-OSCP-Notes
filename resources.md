@@ -191,7 +191,11 @@ TJNull's OSCP Notes - https://www.netsecfocus.com/oscp/2021/05/06/The_Journey_to
 
 [Shell stabilization](https://blog.ropnop.com/upgrading-simple-shells-to-fully-interactive-ttys/)
 
+[Reverse shell stabilization deep dive video](https://www.youtube.com/watch?v=OjkVep2EIlw)
+
 [Linux Privilege Escalation](https://book.hacktricks.xyz/linux-unix/privilege-escalation)
+
+[Linux PrivEsc with .Xauthority magic cookie](https://0xdf.gitlab.io/2022/11/21/htb-squashed.html)
 
 [Payload All the things](https://www.hackingarticles.in/category/privilege-escalation/)
 
