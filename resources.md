@@ -159,6 +159,8 @@ TJNull's OSCP Notes - https://www.netsecfocus.com/oscp/2021/05/06/The_Journey_to
 
 [Rotten Potato Binary download](https://github.com/breenmachine/RottenPotatoNG)
 
+(Mount and extract password hashes from VHD Files)[https://vk9-sec.com/mount-extract-password-hashes-from-vhd-files/]
+
 [Attacking AD](https://zer1t0.gitlab.io/posts/attacking_ad/)
 
 [nmapAutomator](https://github.com/rkhal101/nmapAutomator)
@@ -191,7 +193,7 @@ TJNull's OSCP Notes - https://www.netsecfocus.com/oscp/2021/05/06/The_Journey_to
 
 [Shell stabilization](https://blog.ropnop.com/upgrading-simple-shells-to-fully-interactive-ttys/)
 
-[Reverse shell stabilization deep dive video](https://www.youtube.com/watch?v=OjkVep2EIlw)
+[Reverse shell stabilization deep dive video](https://www.youtube.com/watch?v=DqE6DxqJg8Q)
 
 [Linux Privilege Escalation](https://book.hacktricks.xyz/linux-unix/privilege-escalation)
 

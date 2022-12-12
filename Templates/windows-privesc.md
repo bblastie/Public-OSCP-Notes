@@ -10,6 +10,8 @@ https://github.com/hxhBrofessor/PrivEsc-MindMap/blob/main/windows-mindMap.JPG
 
 Look around the file system!!! 
 
+Check installed programs in `C:\Program Files` or `C:\Program Files (x86)`
+
 **Step 3** 
 
 Determine architecure
@@ -84,6 +86,8 @@ https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20an
 ## AD Commands to run
 
 `ldapsearch -H ldap://<ip>:<port> -x -LLL -s sub -b "DC=<domain>,DC=local"` 
+
+(Pass the Hash)[https://cesidt.medium.com/pass-the-hash-techniques-92e46f28af89]
 
 ### Users
 `net user`
