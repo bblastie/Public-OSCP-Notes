@@ -35,6 +35,17 @@ https://s0cm0nkey.gitbook.io/s0cm0nkeys-security-reference-guide/red-offensive/t
 
 https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Active%20Directory%20Attack.md
 
+What users are on the domain? net users /domain
+What groups are configured on the domain? net group /domain
+Who are the administrators (domain admins?) net group "Domain Admins"
+What SPNs are configured on the host? GetSPNs.py 
+
+Kerberoasting - List out the SPNs on the domain and if there are any that are specifically calling to another host/port within the domain, could be kerberoastable.
+
+Kerberoasting - List out the SPNs on the domain and if there are any that are specifically calling to another host/port within the domain, could be kerberoastable.
+
+Credentials in Memory - run mimikatz and see if any of the accounts you enumerated at first show up. Try cracking the NTLM hash, or passing the hash through something like psexec.py or evil-winrm.
+
 ## Basics 
 
 [Manual Enum Guide](https://fuzzysecurity.com/tutorials/16.html)
