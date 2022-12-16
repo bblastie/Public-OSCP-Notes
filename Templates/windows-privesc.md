@@ -35,6 +35,7 @@ https://s0cm0nkey.gitbook.io/s0cm0nkeys-security-reference-guide/red-offensive/t
 
 https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Active%20Directory%20Attack.md
 
+### Mind set notes for OSCP
 What users are on the domain? net users /domain
 What groups are configured on the domain? net group /domain
 Who are the administrators (domain admins?) net group "Domain Admins"

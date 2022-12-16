@@ -126,6 +126,13 @@ Terminal type? screen
 `nmap -sV -p 80 --script http-shellshock --script-args uri=/cgi-bin/user.sh 10.10.10.56`
 
 ### Linux PrivEsc
+
+### List of users​
+`cat /etc/passwd | cut -d: -f1`    
+
+### List of Super User
+`grep -v -E "^#" /etc/passwd | awk -F: '$3 == 0 { print $1}'`
+
 [GTFOBins for unix binaries for privesc and other bypasses](https://gtfobins.github.io/)
 
 [/etc/shadow and passwd file formats](https://www.cyberciti.biz/faq/understanding-etcshadow-file/#:~:text=The%20%2Fetc%2Fshadow%20is%20a,only%20to%20the%20root%20user.)
@@ -142,6 +149,8 @@ Terminal type? screen
 
 ------------------------------------------
 # Windows 
+### SMB 
+[SMB Enumeration](https://www.hackingarticles.in/a-little-guide-to-smb-enumeration/)
 
 ### Crackmapexec
 https://wiki.porchetta.industries/
