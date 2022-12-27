@@ -15,7 +15,12 @@
 - OS: 
 
 ## Possible routes
-- 
+- Port 1
+    - 
+- Port 2 
+    - 
+- Port 3 
+    - 
 
 ## Exploitation 
 -------------------------
@@ -53,7 +58,6 @@ Enter info about exploitation here
 *Check for robots.txt, changelog, readme, etc.* 
 
 If wordpress site: 
-`wpscan -e ap,at,tt --plugins-detection aggressive --plugins-version-detection aggressive --api-token $WP_SCAN_TOKEN --url http://10.10.110.100:65000/wordpress`
 
 Scan website for common issues:
 `nikto -h "http://$IP" | tee nikto.log` 
@@ -64,9 +68,6 @@ Subdirectory brute force:
 
 nmap default scripts for http:
 `sudo nmap -Pn -p 80 -sC 192.168.120.108` 
-
-If webdav:
-`davtest -url http://10.10.10.15` 
 
 ## SMB 
 -----------------------------
