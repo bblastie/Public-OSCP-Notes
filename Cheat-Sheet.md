@@ -178,7 +178,6 @@ https://wiki.porchetta.industries/
 
 [Buffer Overflow tutorial](https://www.youtube.com/watch?v=1X2JGF_9JGM)
 
-
 ### Mount an NFS share that has ACL applied (root squashing)
 ` sudo nfspysh -o server=10.10.11.191:/var/www/html` 
 

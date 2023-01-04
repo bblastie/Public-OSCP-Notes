@@ -57,13 +57,11 @@ Enter info about exploitation here
 
 *Check for robots.txt, changelog, readme, etc.* 
 
-If wordpress site: 
-
 Scan website for common issues:
 `nikto -h "http://$IP" | tee nikto.log` 
 
 Subdirectory brute force:
-`gobuster dir -u http://$IP -f -w /usr/share/wordlists/dirb/big.txt -b 400,401,404,500 -x php,sh,txt,cgi,html,js,css | tee gobuster.txt`
+`gobuster dir -u http://$IP -f -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -b 400,401,404,500 -x php,sh,txt,cgi,html,js,css | tee gobuster.txt`
 `dirbuster -u http://10.10.10.60 -t 20 -l /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt  -e php,txt,html` 
 
 nmap default scripts for http:
@@ -95,9 +93,9 @@ Zone Transfer:
 `dig axfr cronos.htb @10.10.10.13` 
 
 Subdomain brute force:
-`gobuster dns -d cronos.htb -w /usr/share/wordlists/seclists/Discovery/DNS/bitquark-subdomains-top100000.txt`
+`gobuster dns -d cronos.htb -w /opt/Seclists/Discovery/DNS/bitquark-subdomains-top100000.txt --hh`
 
-`wfuzz -c -u http://10.10.10.43/ -H "Host: FUZZ.nineveh.htb" -w /usr/share/seclists/Discovery/DNS/bitquark-subdomains-top100000.txt --hh 178` ** --hh is hide responses of a certain size
+`wfuzz -c -u http://10.10.10.43/ -H "Host: FUZZ.nineveh.htb" -w /opt/Seclists/Discovery/DNS/bitquark-subdomains-top100000.txt --hh 178` ** --hh is hide responses of a certain size
 
 use nslookup for machines with port 53 open:
 ```
