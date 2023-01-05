@@ -114,7 +114,8 @@ Check for files with SUID bit set and then check gtfobins
 
 ## Tools to run
 
-(linux-smart-enumeration)[https://github.com/diego-treitos/linux-smart-enumeration] 
-(LinEnum.sh)[https://github.com/rebootuser/LinEnum/blob/master/LinEnum.sh]
-(process snooper)[https://github.com/DominicBreuker/pspy] 
-(linux exploit suggester)[https://github.com/jondonas/linux-exploit-suggester-2]
+[LinPeas.sh](https://github.com/carlospolop/PEASS-ng/releases/tag/20230101)
+[linux-smart-enumeration](https://github.com/diego-treitos/linux-smart-enumeration)
+[LinEnum.sh](https://github.com/rebootuser/LinEnum/blob/master/LinEnum.sh)
+[process snooper](https://github.com/DominicBreuker/pspy) 
+[linux exploit suggester](https://github.com/jondonas/linux-exploit-suggester-2)
