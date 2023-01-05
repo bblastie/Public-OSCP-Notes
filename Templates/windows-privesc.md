@@ -43,8 +43,6 @@ What SPNs are configured on the host? GetSPNs.py
 
 Kerberoasting - List out the SPNs on the domain and if there are any that are specifically calling to another host/port within the domain, could be kerberoastable.
 
-Kerberoasting - List out the SPNs on the domain and if there are any that are specifically calling to another host/port within the domain, could be kerberoastable.
-
 Credentials in Memory - run mimikatz and see if any of the accounts you enumerated at first show up. Try cracking the NTLM hash, or passing the hash through something like psexec.py or evil-winrm.
 
 ## Basics 
@@ -99,7 +97,7 @@ Credentials in Memory - run mimikatz and see if any of the accounts you enumerat
 
 `ldapsearch -H ldap://<ip>:<port> -x -LLL -s sub -b "DC=<domain>,DC=local"` 
 
-(Pass the Hash)[https://cesidt.medium.com/pass-the-hash-techniques-92e46f28af89]
+[Pass the Hash](https://cesidt.medium.com/pass-the-hash-techniques-92e46f28af89)
 
 ### Users
 `net user`
