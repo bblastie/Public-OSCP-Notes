@@ -121,16 +121,18 @@ Credentials in Memory - run mimikatz and see if any of the accounts you enumerat
 `post/multi/recon/local_exploit_suggester` 
 
 ## Tools to run
-(WinPeas)[https://github.com/carlospolop/PEASS-ng/releases/tag/20230101]
+[WinPeas](https://github.com/carlospolop/PEASS-ng/releases/tag/20230101)
 
-(Watson for kernel exploit suggestions)[https://github.com/rasta-mouse/Watson, https://0xdf.gitlab.io/2019/03/05/htb-devel.html]
+[Watson for kernel exploit suggestions](https://github.com/rasta-mouse/Watson, https://0xdf.gitlab.io/2019/03/05/htb-devel.html)
 
-(Bloodhound)[https://www.ired.team/offensive-security-experiments/active-directory-kerberos-abuse/abusing-active-directory-with-bloodhound-on-kali-linux]
+[Bloodhound](https://www.ired.team/offensive-security-experiments/active-directory-kerberos-abuse/abusing-active-directory-with-bloodhound-on-kali-linux)
 
-(Powerview)[https://casvancooten.com/posts/2020/11/windows-active-directory-exploitation-cheat-sheet-and-command-reference/#ad-enumeration-with-powerview]
+[Powerview](https://casvancooten.com/posts/2020/11/windows-active-directory-exploitation-cheat-sheet-and-command-reference/#ad-enumeration-with-powerview)
 
-(Windows exploit suggester)[https://github.com/AonCyberLabs/Windows-Exploit-Suggester]
+[Windows exploit suggester](https://github.com/AonCyberLabs/Windows-Exploit-Suggester)
 
-(Sherlock)[https://github.com/rasta-mouse/Sherlock](How to use Sherlock)[https://0xdf.gitlab.io/2021/03/17/htb-optimum.html]
+[Sherlock](https://github.com/rasta-mouse/Sherlock)
 
-(JAWS)[https://github.com/411Hall/JAWS]
+[How to use Sherlock](https://0xdf.gitlab.io/2021/03/17/htb-optimum.html)
+
+[JAWS][(ttps://github.com/411Hall/JAWS)
