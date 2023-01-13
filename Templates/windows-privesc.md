@@ -93,11 +93,6 @@ Credentials in Memory - run mimikatz and see if any of the accounts you enumerat
 
 `reg query HKCU\SOFTWARE\Policies\Microsoft\Windows\Installer\AlwaysInstallElevated` 
 
-## AD Commands to run
-
-`ldapsearch -H ldap://<ip>:<port> -x -LLL -s sub -b "DC=<domain>,DC=local"` 
-
-[Pass the Hash](https://cesidt.medium.com/pass-the-hash-techniques-92e46f28af89)
 
 ### Users
 `net user`
