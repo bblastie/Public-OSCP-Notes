@@ -192,9 +192,9 @@ https://wiki.porchetta.industries/
 [Invoke-Powershelltcp.ps1](https://raw.githubusercontent.com/samratashok/nishang/master/Shells/Invoke-PowerShellTcp.ps1)
 
 ### RDP to Machine
-`xfreerdp +nego +sec-rdp +sec-tls +sec-nla /d: /u: /p: /v:[MACHINE_NAME] /u:[USERNAME] /p:[PASSWORD] /size:1180x708`
+`xfreerdp +nego +sec-rdp +sec-tls +sec-nla /d: /v:[MACHINE_NAME] /u:[USERNAME] /p:[PASSWORD] /size:1180x708`
 
-`EX: xfreerdp +nego +sec-rdp +sec-tls +sec-nla /d: /u: /p: /v:manageengine /u:administrator /p:studentlab /size:1800x900`
+`EX: xfreerdp +nego +sec-rdp +sec-tls +sec-nla /d: /v:manageengine /u:administrator /p:studentlab /size:1800x900`
 
 ### Check if Powershell is running as 32 or 64 bit (Helpful to check if kernel exploits are failing)
 `PS C:\Users> [Environment]::Is64BitProcess` returns true/false 
